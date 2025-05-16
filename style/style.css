@@ -26,8 +26,10 @@ body {
 }
 
 .cover {
+  width: 140px;
   align-items: center;
   margin-left:25%;
+  
 }
 
 .titre-livre {
@@ -125,4 +127,43 @@ body {
   justify-content: space-evenly;
   gap: 10px;
   margin-top: 5px;
+}
+
+
+.magasin-header {
+  background: #f2d4a0;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
+}
+
+.sell-btn {
+  background: yellow;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.offres {
+  background: #fff7e6;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.offre {
+  background: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: black;
+}
+
+.offre:hover {
+  background: #f0f0f0;
 }
