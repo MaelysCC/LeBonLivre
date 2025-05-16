@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LeBonLivre - Info</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="menu">&#9776;</div>
+  <div class="retour">&#x21A9;</div>
+</div>
+
+<div class="container">
+  <img src="../img/OIP.jpeg" class="cover">
+
+  <h2 class="titre-livre">Omniscient Reader’s viewpoint</h2>
+  <p>Auteur : Sing Shong<br>Édition : Munpia</p>
+
+  <div class="onglets">
+    <button class="active">Info</button>
+    <button>Magasin</button>
+    <button>Avis</button>
+  </div>
+
+  <div class="actions">
+    <span class="icon">♡</span>
+    <button class="add">Ajouter à Lectures</button>
+    <span class="icon">🛒</span>
+  </div>
+
+  <div class="resume">
+    <p id="resume-text">
+      Kim Dokja est un employé banal menant une vie ordinaire. Le meilleur moment de sa journée ? Lorsqu’il lit son webroman préféré, dont il est le seul et unique lecteur. Mais alors qu’il en découvre l’ultime chapitre, l’apocalypse s’abat sur le monde... <span id="toggle">Voir plus</span>
+    </p>
+  </div>
+
+  <div class="tags">
+    <span>Light novel</span><span>Seinen</span><span>Science fiction</span><span>Fantastique</span>
+    <span>Dystopie</span><span>Survival horror</span><span>Post apocalyptique</span><span>Sumaturel</span>
+    <span>Horreur</span><span>Meurtre</span><span>Jeux</span><span>Corée</span>
+  </div>
+
+  <div class="reco-section">
+    <p>Que lire après Omniscient Reader’s Viewpoint :</p>
+    <div class="reco-row">
+      <img src="https://via.placeholder.com/80x120">
+      <img src="https://via.placeholder.com/80x120">
+      <img src="https://via.placeholder.com/80x120">
+    </div>
+  </div>
+</div>
+
+<script>
+  const toggle = document.getElementById('toggle');
+  const resume = document.getElementById('resume-text');
+  let expanded = false;
+
+  toggle.addEventListener('click', () => {
+    expanded = !expanded;
+    resume.innerHTML = expanded
+      ? "Kim Dokja est un employé banal menant une vie ordinaire. Le meilleur moment de sa journée ? Lorsqu’il lit son webroman préféré, dont il est le seul et unique lecteur. Mais alors qu’il en découvre l’ultime chapitre, l’apocalypse s’abat sur le monde... Dans des circonstances étrangement similaires à celles décrites dans son roman ! De monstrueuses créatures apparaissent soudainement, obligeant les humains à suivre des... <span id='toggle'>Voir moins</span>"
+      : "Kim Dokja est un employé banal menant une vie ordinaire. Le meilleur moment de sa journée ? Lorsqu’il lit son webroman préféré, dont il est le seul et unique lecteur. Mais alors qu’il en découvre l’ultime chapitre, l’apocalypse s’abat sur le monde... <span id='toggle'>Voir plus</span>";
+  });
+</script>
+
+</body>
+</html>

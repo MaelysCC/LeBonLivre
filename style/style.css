@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f4ed;
+  color: #1e1e1e;
+}
+
+.header {
+  background-color: #d2b48c;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu, .retour {
+  font-size: 20px;
+}
+
+.container {
+  background: linear-gradient(to bottom, #1e2b3b, #1e2b3b 40%, #f2d4a0 40%);
+  padding: 10px;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 20px;
+  color: white;
+}
+
+.cover {
+  display: block;
+  margin: auto;
+  width: 120px;
+  border-radius: 5px;
+}
+
+.titre-livre {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.onglets {
+  background: #f2d4a0;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.onglets button {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.onglets .active {
+  background: #e1c293;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f2d4a0;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.add {
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.resume {
+  background: white;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#toggle {
+  font-weight: bold;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  background: #f2d4a0;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.tags span {
+  background: white;
+  color: black;
+  padding: 3px 8px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.reco-section {
+  background: #f2d4a0;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  color: black;
+}
+
+.reco-row {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  margin-top: 5px;
+}
