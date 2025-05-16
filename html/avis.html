@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LeBonLivre - Avis</title>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="menu">&#9776;</div>
+  <div class="retour">&#x21A9;</div>
+</div>
+
+<div class="presentation">
+    <img src="../img/OIP.jpeg" class="cover">
+
+  <h2 class="titre-livre">Omniscient Reader’s viewpoint</h2>
+  <p>Auteur : Sing Shong<br>Édition : Munpia</p>
+
+</div>
+<div class="container">
+
+  <div class="onglets">
+    <a href="./info.html"><button>Info</button></a>
+    <a href="./magasin.html"><button>Magasin</button></a>
+    <button class="active">Avis</button>
+  </div>
+  <h3>Critique</h3>
+  <div class="carousel" id="carousel">
+    <div class="review"><strong>tls123</strong><p>Le pitch de la série est aussi prometteur que son amorce. [...]</p></div>
+    <div class="review"><strong>Kalkaya</strong><p>Ce que je peux affirmer, c'est qu'en un seul volume, on peut voir le développement de l'intrigue escalad[...]</p></div>
+    <div class="review"><strong>Lila</strong><p>Au départ un webtoon, devenu un roman [...]</p></div>
+  </div>
+
+  <div class="commentaire">
+    <textarea id="commentaire" placeholder="Commentaire..."></textarea>
+    <button onclick="envoyerAvis()">Envoyé</button>
+  </div>
+</div>
+
+<script>
+function envoyerAvis() {
+  const text = document.getElementById("commentaire").value.trim();
+  if (!text) return;
+  const newReview = document.createElement("div");
+  newReview.classList.add("review");
+  newReview.innerHTML = `<strong>Anonyme</strong><p>${text}</p>`;
+  document.getElementById("carousel").appendChild(newReview);
+  document.getElementById("commentaire").value = "";
+}
+</script>
+
+</body>
+</html>
