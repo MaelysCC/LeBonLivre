@@ -30,7 +30,7 @@ body {
   max-width: 400px;
   margin: auto;
   border-radius: 0 0 20px 20px;
-  color: white;
+  color:#1e1e1e;
 }
 
 .cover {
@@ -147,6 +147,7 @@ body {
 
 .sell-btn {
   background: yellow;
+  color:#1e1e1e;
   border: none;
   padding: 8px 12px;
   border-radius: 10px;
@@ -226,4 +227,46 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.etat-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.etat-options label {
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.etat-options input {
+  margin-right: 5px;
+}
+
+input[type="text"] {
+  width: 90%;
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #1e2b3b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
 

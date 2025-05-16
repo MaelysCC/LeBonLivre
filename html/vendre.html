@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LeBonLivre - Vendre</title>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="menu">&#9776;</div>
+  <div class="retour">&#x21A9;</div>
+</div>
+
+<div class="presentation">
+    <img src="../img/OIP.jpeg" class="cover">
+
+  <h2 class="titre-livre">Omniscient Reader’s viewpoint</h2>
+  <p>Auteur : Sing Shong<br>Édition : Munpia</p>
+
+</div>
+<div class="container" id="sell">
+  <div class="onglets">
+    <a href="./info.html"><button class="inactive">Info</button></a>
+    <a href="./magasin.html"><button class="active">Magasin</button></a>
+    <a href="./avis.html"><button class="inactive">Avis</button></a>
+  </div>
+  <div class="magasin-header">
+    <table>
+      <tr>
+        <th>Zone</th><th>Prix</th><th>Livraison</th><th>Catégorie</th>
+      </tr>
+    </table>
+  </div>
+
+   <h3>Utilisateur : <input type="text" id="user" placeholder="User name"></h3>
+
+  <div class="photo-block">
+    <label for="photo">Photo</label><br>
+    <input type="file" id="photo" accept="image/*">
+  </div>
+
+  <h4>État du livre :</h4>
+  <div class="etat-options">
+    <label><input type="radio" name="etat" value="Sous blister"> Sous blister</label>
+    <label><input type="radio" name="etat" value="Neuf"> Neuf</label>
+    <label><input type="radio" name="etat" value="Très bon état"> Très bon état</label>
+    <label><input type="radio" name="etat" value="Bon état"> Bon état</label>
+    <label><input type="radio" name="etat" value="État correct"> État correct</label>
+    <label><input type="radio" name="etat" value="Abîmé"> Abîmé</label>
+  </div>
+    
+    <label>Prix : <input type="text" id="prix" placeholder="en €"></label><br>
+    <h4>Livraison :</h4>
+    <div class="livraison-options">
+        <label><input type="radio" name="livraison" value="Main propre"> Main propre</label>
+        <label><input type="radio" name="livraison" value="Envoi"> Envoi</label>
+    </div>
+    <br>
+    <label>Détails : <input type="text" id="details" ></label><br>
+    <label>Localisation : <input type="text" id="localisation" ></label><br><br>
+
+  <button onclick="soumettreAnnonce()">Publier l’annonce</button>
+</div>
+
+<script>
+function soumettreAnnonce() {
+  const annonce = {
+    user: document.getElementById("user").value || "Anonyme",
+    prix: document.getElementById("prix").value,
+    livraison: document.querySelector('input[name="livraison"]:checked')?.value || "Non précisé",
+    details: document.getElementById("details").value,
+    localisation: document.getElementById("localisation").value,
+    etat: document.querySelector('input[name="etat"]:checked')?.value || "Non précisé"
+  };
+
+  let annonces = JSON.parse(localStorage.getItem("annonces")) || [];
+  annonces.push(annonce);
+  localStorage.setItem("annonces", JSON.stringify(annonces));
+  alert("Annonce publiée !");
+  window.location.href = "magasin.html";
+}
+</script>
+
+</body>
+</html>

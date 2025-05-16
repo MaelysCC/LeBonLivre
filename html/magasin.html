@@ -22,9 +22,9 @@
 </div>
 <div class="container">
   <div class="onglets">
-    <a href="./info.html"><button>Info</button></a>
+    <a href="./info.html"><button class="inactive">Info</button></a>
     <button class="active">Magasin</button>
-    <a href="./avis.html"><button>Avis</button></a>
+    <a href="./avis.html"><button class="inactive">Avis</button></a>
   </div>
   <div class="magasin-header">
     <table>
@@ -32,11 +32,11 @@
         <th>Zone</th><th>Prix</th><th>Livraison</th><th>Catégorie</th>
       </tr>
     </table>
-    <button class="sell-btn">Je souhaite vendre mon exemplaire</button>
+    <a href="./vendre.html"><button class="sell-btn">Je souhaite vendre mon exemplaire</button></a>
     <p>32 disponibilités</p>
   </div>
 
-  <div class="offres">
+  <div class="offres" id="offres">
     <a href="./offre.html"><div class="offre">
       <p><strong>TipLouf</strong> — Prix: 6€ — Livraison</p>
     </div></a>
@@ -51,6 +51,20 @@
     </div></a>
   </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("offres");
+  const annonces = JSON.parse(localStorage.getItem("annonces")) || [];
+
+  annonces.forEach(a => {
+    const div = document.createElement("div");
+    div.className = "offre";
+    div.innerHTML = `<strong>${a.user}</strong> — Prix: ${a.prix} — ${a.livraison}<br><small>${a.etat} – ${a.details}, ${a.localisation}</small>`;
+    container.appendChild(div);
+  });
+});
+</script>
 
 </body>
 </html>
