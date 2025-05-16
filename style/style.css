@@ -26,10 +26,8 @@ body {
 }
 
 .cover {
-  display: block;
-  margin: auto;
-  width: 120px;
-  border-radius: 5px;
+  align-items: center;
+  margin-left:25%;
 }
 
 .titre-livre {
