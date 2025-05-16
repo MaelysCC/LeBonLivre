@@ -35,21 +35,29 @@
   </div>
 
   <div class="commentaire">
-    <textarea id="commentaire" placeholder="Commentaire..."></textarea>
-    <button onclick="envoyerAvis()">Envoyé</button>
+  <input type="text" id="pseudo" placeholder="Votre pseudo">
+  <textarea id="commentaire" placeholder="Commentaire..."></textarea>
+  <button onclick="envoyerAvis()">Envoyé</button>
   </div>
+
 </div>
 
 <script>
 function envoyerAvis() {
   const text = document.getElementById("commentaire").value.trim();
+  const pseudo = document.getElementById("pseudo").value.trim() || "Anonyme";
+
   if (!text) return;
+
   const newReview = document.createElement("div");
   newReview.classList.add("review");
-  newReview.innerHTML = `<strong>Anonyme</strong><p>${text}</p>`;
+  newReview.innerHTML = `<strong>${pseudo}</strong><p>${text}</p>`;
+
   document.getElementById("carousel").appendChild(newReview);
   document.getElementById("commentaire").value = "";
+  document.getElementById("pseudo").value = "";
 }
+
 </script>
 
 </body>
