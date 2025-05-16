@@ -36,23 +36,23 @@
     <p>32 disponibilités</p>
   </div>
 
-  <div class="offres" id="offres">
-    <a href="./offre.html"><div class="offre">
-      <p><strong>TipLouf</strong> — Prix: 6€ — Livraison</p>
-    </div></a>
-    <a href="./offre.html"><div class="offre">
-      <p><strong>@seicho</strong> — Prix: 3€ — Livraison et main propre</p>
-    </div></a>
-    <a href="./offre.html"><div class="offre">
-      <p><strong>jadou</strong> — Prix: 12€ — Main propre uniquement</p>
-    </div></a>
-    <a href="./offre.html"><div class="offre">
-      <p><strong>Killalune</strong> — Prix: 10€ / échange — Échange ou main propre</p>
-    </div></a>
+  <div class="offres">
+  <a href="./offre.html?id=0"><div class="offre">
+    <p><strong>TipLouf</strong> — Prix: 6€ — Livraison</p>
+  </div></a>
+  <a href="./offre.html?id=1"><div class="offre">
+    <p><strong>@seicho</strong> — Prix: 3€ — Livraison et main propre</p>
+  </div></a>
+  <a href="./offre.html?id=2"><div class="offre">
+    <p><strong>jadou</strong> — Prix: 12€ — Main propre uniquement</p>
+  </div></a>
+  <a href="./offre.html?id=3"><div class="offre">
+    <p><strong>Killalune</strong> — Prix: 10€ / échange — Échange ou main propre</p>
+  </div></a>
   </div>
 </div>
 
-<script>
+<!--<script>
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("offres");
   const annonces = JSON.parse(localStorage.getItem("annonces")) || [];
@@ -64,7 +64,36 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(div);
   });
 });
+</script>-->
+<script>
+  localStorage.removeItem("annonces");  
+  document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".offres");
+  const countText = document.querySelector(".magasin-header p");
+  const baseCount = 4; // les 4 offres codées en dur
+  let id = baseCount;
+
+  // Chargement des annonces dynamiques
+  const annonces = JSON.parse(localStorage.getItem("annonces")) || [];
+
+  annonces.forEach((a, i) => {
+    const div = document.createElement("div");
+    div.className = "offre";
+    div.innerHTML = `<p><strong>${a.user}</strong> — Prix: ${a.prix} — ${a.livraison}</p><small>${a.etat} – ${a.details}, ${a.localisation}</small>`;
+    
+    // Créer un lien vers offre dynamique (par exemple: offre.html?user=dynamic&id=0)
+    const link = document.createElement("a");
+    link.href = `./offre.html?user=dynamic&id=${i}`;
+    link.appendChild(div);
+    container.appendChild(link);
+  });
+
+  // Mise à jour du compteur total
+  const total = baseCount + annonces.length;
+  countText.textContent = `${total} disponibilités`;
+});
 </script>
+
 
 </body>
 </html>

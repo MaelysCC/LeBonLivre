@@ -1,23 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Détail de l'offre</title>
-  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/style.css" />
 </head>
 <body>
-<div class="header">
-  <div class="retour" onclick="history.back()">← Retour</div>
-</div>
+  <div class="header">
+    <div class="retour" onclick="history.back()">← Retour</div>
+  </div>
 
-<div class="container">
-  <h2>Offre de @seicho</h2>
-  <p><strong>Prix :</strong> 3€</p>
-  <p><strong>Livraison :</strong> Livraison et main propre</p>
-  <p><strong>État :</strong> Très bon état</p>
-  <p><strong>Commentaire vendeur :</strong><br>Peu utilisé, en bon état, remise possible à Paris 13 ou expédition.</p>
-  <button class="sell-btn">Contacter le vendeur</button>
-</div>
+  <div class="container">
+    <h2>Offre</h2>
+    <p><strong>Prix :</strong></p>
+    <p><strong>Livraison :</strong></p>
+    <p><strong>État :</strong></p>
+    <p><strong>Commentaire vendeur :</strong><br></p>
+    <button class="sell-btn">Contacter le vendeur</button>
+  </div>
+
+  <script>
+  const data = [
+    ["TipLouf", "6€", "Livraison", "Très bon état", "Peu utilisé, en bon état, remise possible à Paris 13 ou expédition."],
+    ["@seicho", "3€", "Livraison et main propre", "Bon état", "Mange mon livre."],
+    ["jadou", "12€", "Main propre uniquement", "Bien", "Je déteste ce livre, je ne dors plus depuis son achat"],
+    ["Killalune", "10€ / échange", "Échange ou main propre", "Donnez moi le prochain tome!!!!"]
+  ];
+
+  const params = new URLSearchParams(window.location.search);
+  const isDynamic = params.get("user") === "dynamic";
+  const id = parseInt(params.get("id"));
+
+  function render(offer) {
+    document.querySelector("h2").textContent = "Offre de " + offer[0];
+    document.querySelectorAll("p")[0].innerHTML = "<strong>Prix :</strong> " + offer[1];
+    document.querySelectorAll("p")[1].innerHTML = "<strong>Livraison :</strong> " + offer[2];
+    document.querySelectorAll("p")[2].innerHTML = "<strong>État :</strong> " + offer[3];
+    document.querySelectorAll("p")[3].innerHTML = "<strong>Commentaire vendeur :</strong><br>" + offer[4];
+  }
+
+  if (!isNaN(id)) {
+    if (isDynamic) {
+      const annonces = JSON.parse(localStorage.getItem("annonces")) || [];
+      const dyn = annonces[id];
+      if (dyn) {
+        render([dyn.user, dyn.prix, dyn.livraison, dyn.etat, dyn.details]);
+      } else {
+        document.querySelector(".container").innerHTML = "<p>Offre introuvable (annonce dynamique).</p>";
+      }
+    } else if (id >= 0 && id < data.length) {
+      render(data[id]);
+    } else {
+      document.querySelector(".container").innerHTML = "<p>Offre introuvable.</p>";
+    }
+  }
+</script>
+
 </body>
 </html>
