@@ -380,8 +380,8 @@ button {
 }
 
 .cover-sim {
-  width: 30%;
-
+  width: 100px;
+  height: 140px;
   background: #f9f4ed;
   border: 2px solid black;
   border-radius: 3px;
@@ -390,12 +390,30 @@ button {
   justify-content: center;
 }
 
-.plus {
-  margin-left: auto;
-  font-weight: bold;
-  color: black;
-  cursor: pointer;
+.name{
+  max-width: 100px;
+  
+  color:#1e1e1e;
+  
 }
+.livre p{
+  display: none;
+  position: absolute;
+  min-width: 50px;
+  z-index: 10;
+  list-style-type: none;
+}
+
+.livre:hover p{
+  display: block;
+  background-color:#d2b48c;
+  border: 2px solid;
+  padding: 5px;
+  margin-top: 140px;
+  max-width: 90px;
+}
+
+
 
 
 
