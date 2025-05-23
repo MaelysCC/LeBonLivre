@@ -391,8 +391,7 @@ button {
 }
 
 .name{
-  max-width: 100px;
-  
+  max-width: 90px;
   color:#1e1e1e;
   
 }
@@ -410,7 +409,7 @@ button {
   border: 2px solid;
   padding: 5px;
   margin-top: 140px;
-  max-width: 90px;
+  width: auto;
 }
 
 
