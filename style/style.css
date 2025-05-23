@@ -10,18 +10,51 @@ body {
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  max-width: 400px;
+  margin:auto;
 }
 
-.menu, .retour {
+#menu, .retour {
   font-size: 20px;
 }
+
+#menu{
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.depli{
+  position :relative;
+  list-style-type: none;
+}
+
+#menu .depli ul{
+  display: none;
+  position: absolute;
+  min-width: 50px;
+  z-index: 10;
+  list-style-type: none;
+}
+
+#menu .depli:hover ul {
+    display: block;
+    background-color:#d2b48c;
+    border: 2px solid;
+    padding: 10px;
+}
+
+
 
 .presentation{
   background:  #1e2b3b;
   padding: 10px;
   max-width: 400px;
   margin: auto;
-  border-radius: 20px 20px 0 0;
+  border-radius: 0;
   color: white;
 }
 .container {
@@ -80,6 +113,9 @@ body {
 
 .icon {
   font-size: 20px;
+  background-color: #faefdc;
+ padding: 5px;
+  border-radius: 100%;
 }
 
 .add {
@@ -87,6 +123,9 @@ body {
   border: none;
   font-weight: bold;
   cursor: pointer;
+  font-weight: bold;
+  color:#1e1e1e;
+  text-decoration: underline;
 }
 
 .resume {
@@ -267,6 +306,73 @@ button {
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
+}
+
+
+
+.accueil {
+  background: #1e2b3b;
+  max-width: 400px;
+  margin: auto;
+  padding: 10px;
+  color: white;
+  font-family: Arial, sans-serif;
+  border-radius: 0 0 20px 20px;
+  padding-bottom: 40px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.selection {
+  margin-bottom: 20px;
+}
+
+.selection h3 {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: white;
+}
+
+.livres {
+  display: flex;
+  align-items: center;
+  background: #d2b48c;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  gap: 10px;
+}
+
+.livre {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.cover-sim {
+  width: 50px;
+  height: 70px;
+  background: #f9f4ed;
+  border: 2px solid black;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus {
+  margin-left: auto;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
 }
 
 
