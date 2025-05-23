@@ -10,7 +10,7 @@ body {
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  max-width: 400px;
+  max-width: 100%;
   margin:auto;
 }
 
@@ -52,7 +52,7 @@ body {
 .presentation{
   background:  #1e2b3b;
   padding: 10px;
-  max-width: 400px;
+  max-width: 100%;
   margin: auto;
   border-radius: 0;
   color: white;
@@ -60,16 +60,17 @@ body {
 .container {
   background: linear-gradient(to bottom,  #1e2b3b, #1e2b3b 5%, #f2d4a0 7%);
   padding: 10px;
-  max-width: 400px;
+  max-width: 100%;
   margin: auto;
   border-radius: 0 0 20px 20px;
   color:#1e1e1e;
   margin-bottom: 0;
+  max-height: 100%;
 }
 
 .accueil {
   background: #1e2b3b;
-  max-width: 400px;
+  max-width: 100%;
   margin: auto;
   padding: 10px;
   color: white;
@@ -86,10 +87,9 @@ body {
 }
 
 .cover {
-  width: 140px;
+  width: 20%;
   align-items: center;
-  margin-left:25%;
-  
+  margin-left:40%;  
 }
 
 .titre-livre {
