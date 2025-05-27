@@ -36,12 +36,14 @@
   </div>
 
   <script>
-  const data = [
+  const data =[ [
     ["TipLouf", "6€", "Livraison", "Très bon état", "Peu utilisé, en bon état, remise possible à Paris 13 ou expédition."],
     ["@seicho", "3€", "Livraison et main propre", "Bon état", "Mange mon livre."],
     ["jadou", "12€", "Main propre uniquement", "Bien", "Je déteste ce livre, je ne dors plus depuis son achat"],
     ["Killalune", "10€ / échange", "Échange ou main propre", "Donnez moi le prochain tome!!!!"]
-  ];
+  ],[["Bertrand", "2€","Livraison", "Bon état", "Peu utilisé mais à beaucoup trainé dans le grenier"],
+    ["Oliver", "1€", "Main propre uniquement", "Abimé", "Je l'ai retrouvé, ça m'a rappeler le lycée"]]];
+  
 
   const params = new URLSearchParams(window.location.search);
   const isDynamic = params.get("user") === "dynamic";

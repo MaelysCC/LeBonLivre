@@ -10,7 +10,7 @@ body {
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  max-width: 100%;
+  max-width: 400px;
   margin:auto;
 }
 
@@ -52,7 +52,7 @@ body {
 .presentation{
   background:  #1e2b3b;
   padding: 10px;
-  max-width: 100%;
+  max-width: 400px;
   margin: auto;
   border-radius: 0;
   color: white;
@@ -60,36 +60,17 @@ body {
 .container {
   background: linear-gradient(to bottom,  #1e2b3b, #1e2b3b 5%, #f2d4a0 7%);
   padding: 10px;
-  max-width: 100%;
+  max-width: 400px;
   margin: auto;
   border-radius: 0 0 20px 20px;
   color:#1e1e1e;
-  margin-bottom: 0;
-  max-height: 100%;
-}
-
-.accueil {
-  background: #1e2b3b;
-  max-width: 100%;
-  margin: auto;
-  padding: 10px;
-  color: white;
-  font-family: Arial, sans-serif;
-  border-radius: 0 0 20px 20px;
-  padding-bottom: 40px;
-  margin-bottom: 0;
-  height:100%;
-  overflow-y: auto;
-}
-
-.acceuil::-webkit-scrollbar {
-  width: 6px;
 }
 
 .cover {
-  width: 20%;
+  width: 140px;
   align-items: center;
-  margin-left:40%;  
+  margin-left:25%;
+  
 }
 
 .titre-livre {
@@ -186,7 +167,6 @@ body {
   border-radius: 10px;
   margin-top: 10px;
   color: black;
-
 }
 
 .reco-row {
@@ -194,15 +174,6 @@ body {
   justify-content: space-evenly;
   gap: 10px;
   margin-top: 5px;
-  overflow-x: auto;
-}
-
-#recomm {
-  width: 100px;
-}
-
-.reco-row::-webkit-scrollbar {
-  height: 6px;
 }
 
 
@@ -339,16 +310,23 @@ button {
 
 
 
+.accueil {
+  background: #1e2b3b;
+  max-width: 400px;
+  margin: auto;
+  padding: 10px;
+  color: white;
+  font-family: Arial, sans-serif;
+  border-radius: 0 0 20px 20px;
+  padding-bottom: 40px;
+}
+
 .search-bar {
   width: 100%;
   padding: 8px;
   border-radius: 5px;
   border: none;
   margin-bottom: 20px;
-}
-
-.search {
-  max-width: 500px;
 }
 
 .selection {
@@ -371,6 +349,10 @@ button {
   gap: 10px;
 }
 
+.bookCov {
+  width: 10px;
+}
+
 .livre {
   display: flex;
   flex-direction: column;
@@ -380,8 +362,8 @@ button {
 }
 
 .cover-sim {
-  width: 100px;
-  height: 140px;
+  width: 50px;
+  height: 70px;
   background: #f9f4ed;
   border: 2px solid black;
   border-radius: 3px;
@@ -390,29 +372,23 @@ button {
   justify-content: center;
 }
 
-.name{
-  max-width: 90px;
-  color:#1e1e1e;
-  
-}
-.livre p{
-  display: none;
-  position: absolute;
-  min-width: 50px;
-  z-index: 10;
-  list-style-type: none;
+.plus {
+  margin-left: auto;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
 }
 
-.livre:hover p{
-  display: block;
-  background-color:#d2b48c;
-  border: 2px solid;
-  padding: 5px;
-  margin-top: 140px;
-  width: auto;
+.reco-row img {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 5px;
+  transition: transform 0.2s;
 }
 
-
-
+.reco-row img:hover {
+  transform: scale(1.05);
+}
 
 
